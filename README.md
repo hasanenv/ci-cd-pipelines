@@ -1,10 +1,10 @@
 # CI/CD Pipelines
 
-This repository contains a small set of CI and CI/CD pipelines built with GitHub Actions, focused on real automation tasks rather than abstract examples.
+This repo includes two focused pipelines. 
 
-Each pipeline is scoped to a specific part of the repository and does one thing clearly, such as building and publishing a Docker image or validating Terraform configuration. The workflows are intentionally explicit so it’s obvious what runs, when it runs, and why.
+One builds and pushes a Docker image, while the other validates Terraform configuration. Each workflow is scoped to a specific part of the repository and is designed to do one thing clearly.
 
-All pipelines live in the same repo but are kept separate by design, reflecting how CI and CI/CD are commonly structured in practice.
+Both pipelines live in the same repo but are kept separate by design, reflecting how CI and CI/CD are commonly structured in practice.
 
 ```
 . 
@@ -32,7 +32,9 @@ All pipelines live in the same repo but are kept separate by design, reflecting 
       └─ terraform-ci-checks.yaml
 ```
 
-Each directory represents a focused pipeline with its own code and documentation. All GitHub Actions workflows live in .github/workflows at the repository root, as required by GitHub Actions.
+Each directory represents a focused pipeline with its own code and documentation. 
+
+All GitHub Actions workflows live in `.github/workflows` at the repository root, as required by GitHub Actions.
 
 ## Included Pipelines
 
