@@ -2,9 +2,7 @@
 
 This directory contains a CI pipeline that validates Terraform configuration using GitHub Actions.
 
-The focus here is on catching issues early by enforcing consistent formatting and validating configuration correctness, without applying infrastructure or requiring cloud credentials. The pipeline is designed to act as a guardrail, not a deployment mechanism.
-
-Terraform code is read and checked, but never executed against a real environment.
+The pipeline enforces consistent formatting and validates configuration correctness before any infrastructure changes are made. Terraform code is checked in CI, without applying resources or interacting with a live environment.
 
 ---
 
@@ -32,3 +30,4 @@ Terraform code is read and checked, but never executed against a real environmen
 <p align="center">
   <img src="/assets/terraform-ci-checks.png" alt="Successful Terraform validation pipeline run" width="1000">
 </p>
+
