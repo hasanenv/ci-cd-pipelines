@@ -7,31 +7,36 @@ Each pipeline is scoped to a specific part of the repository and does one thing 
 All pipelines live in the same repo but are kept separate by design, reflecting how CI and CI/CD are commonly structured in practice.
 
 ```
-.
-├─ README.md
-├─ LICENSE
-├─ .gitignore
-│
-├─ docker-build-publish/
-│  ├─ Dockerfile
-│  ├─ application files
-│  └─ README.md
-│
-├─ terraform-validation/
-│  ├─ main.tf
-│  ├─ provider.tf
-│  └─ README.md
-│
-└─ .github/
-   └─ workflows/
-      ├─ docker-build-publish.yml
-      └─ terraform-ci.yml
+. 
+├─ README.md
+├─ LICENSE
+├─ .gitignore
+|
+├─ docker-build-push/
+│  ├─ Dockerfile
+│  ├─ hello.py
+│  └─ README.md
+|
+├─ terraform-checks/
+│  ├─ main.tf
+│  ├─ provider.tf
+│  └─ README.md
+|
+├─ assets/
+│  ├─ docker-build-push.png
+│  └─ terraform-ci-checks.png
+|
+└─ .github/
+   └─ workflows/
+      ├─ docker-build-push.yaml
+      └─ terraform-ci-checks.yaml
 ```
+
 Each directory represents a focused pipeline with its own code and documentation. All GitHub Actions workflows live in .github/workflows at the repository root, as required by GitHub Actions.
 
-## Included pipelines
+## Included Pipelines
 
-### Docker build and publish
+### Docker Build and Push
 
 A CI/CD pipeline that builds and publishes a Docker image on push. It focuses on:
 
@@ -40,9 +45,9 @@ A CI/CD pipeline that builds and publishes a Docker image on push. It focuses on
 - Authenticating securely using GitHub Actions secrets
 - Keeping the workflow explicit and predictable
 
-See [docker-build-publish/README.md](docker-build-publish/README.md) for details.
+See [docker-build-push/README.md](docker-build-push/README.md) for details.
 
-### Terraform validation
+### Terraform Validation
 
 A CI pipeline that validates Terraform configuration without applying infrastructure. It focuses on:
 
@@ -51,5 +56,4 @@ A CI pipeline that validates Terraform configuration without applying infrastruc
 - Catching errors early without requiring cloud credentials
 - Keeping infrastructure changes out of CI by design
 
-See [terraform-validation/README.md](terraform-validation/README.md) for details.
-
+See [terraform-checks/README.md](terraform-checks/README.md) for details.
