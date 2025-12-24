@@ -1,10 +1,11 @@
 # Docker Build and Push Pipeline
 
-This directory contains a CI/CD pipeline that builds a Docker image and publishes it to Docker Hub using GitHub Actions.
+This directory contains a CI/CD pipeline that builds and publishes a Docker image to Docker Hub using GitHub Actions.
 
-The focus here is on automating the full container build and publish flow in a clear and predictable way. The pipeline runs on push, builds the image from a scoped context, tags it, and pushes it to Docker Hub using credentials stored securely as GitHub Actions secrets.
+The pipeline runs on push, builds the image from a scoped context, tags it, and pushes it to Docker Hub using credentials managed through GitHub Actions secrets.
 
-Nothing is deployed or run automatically after the image is published. The pipeline stops at the artefact stage by design.
+The pipeline stops at the artefact stage by design.
+Image publishing is handled in CI, with deployment intentionally kept separate.
 
 ---
 
@@ -32,4 +33,5 @@ Nothing is deployed or run automatically after the image is published. The pipel
 <p align="center">
   <img src="/assets/docker-build-push.png" alt="Successful Docker build and push pipeline run" width="1000">
 </p>
+
 
