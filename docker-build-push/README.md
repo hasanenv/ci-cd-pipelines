@@ -1,4 +1,4 @@
-# Docker Build and Publish Pipeline
+# Docker Build and Push Pipeline
 
 This directory contains a CI/CD pipeline that builds a Docker image and publishes it to Docker Hub using GitHub Actions.
 
@@ -32,3 +32,4 @@ Nothing is deployed or run automatically after the image is published. The pipel
 <p align="center">
   <img src="/assets/docker-build-push.png" alt="Successful Docker build and push pipeline run" width="1000">
 </p>
+
